@@ -1,0 +1,23 @@
+# Higher learning rate experiment
+seed: 42
+num_classes_type: 4
+num_classes_location: 4
+image_size: 256
+mask_size: 28
+train:
+  batch_size: 16 # Reduced for potentially larger models
+  num_workers: 4
+  epochs: 100
+  lr: 5e-4 # Lower learning rate
+  weight_decay: 1e-3 # Higher weight decay
+  lambda_bbox: 2.0 # Emphasize bbox loss
+  lambda_mask: 0.5 # De-emphasize mask loss
+  early_stop_patience: 15
+paths:
+  train_csv: data/train/_annotations.csv
+  train_dir: data/train
+  valid_csv: data/valid/_annotations.csv
+  valid_dir: data/valid
+  output_dir: outputs/exp1
+logging:
+  log_interval: 25

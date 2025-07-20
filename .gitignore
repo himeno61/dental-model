@@ -4,3 +4,4 @@ outputs/
 *.pt
 .env
 .DS_Store
+.venv
