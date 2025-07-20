@@ -1,0 +1,22 @@
+seed: 42
+num_classes_type: 4
+num_classes_location: 4
+image_size: 256
+mask_size: 28
+train:
+  batch_size: 32
+  num_workers: 4
+  epochs: 50
+  lr: 1e-3
+  weight_decay: 1e-4
+  lambda_bbox: 1.0
+  lambda_mask: 1.0
+  early_stop_patience: 10
+paths:
+  train_csv: data/train/_annotations.csv
+  train_dir: data/train
+  valid_csv: data/valid/_annotations.csv
+  valid_dir: data/valid
+  output_dir: outputs
+logging:
+  log_interval: 50
